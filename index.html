@@ -52,6 +52,9 @@
       .ebox {
         
       }
+      .bot_text {
+        color: white;
+      }
       .w_cn {
         border-style : solid; 
         border-width : 6px;
@@ -93,9 +96,9 @@
               or  just the ip.
               if you already know how just look on the right >>>><br><br>
 
-                make sure to join the discord sever <a href="https://discord.gg/sXgXec">here!</a>
+                M-ake sure to join the discord sever <a href="https://discord.gg/sXgXec">here!</a>
               </div>  
-              <div class="box"> (MCPC1)[JAVA] IP : mc.parkrose.tk<br>[Bedrock] IP :comming soon 
+              <div class="box"> (MCPC1)[JAVA] IP : mc.parkrose.cf<br>[Bedrock] IP :comming soon 
                 
               </div>
             </div>
@@ -129,15 +132,16 @@
                   Status MCPC1: <span class="server-online"></span>
                 </div>
                 <script>
-                  MinecraftAPI.getServerStatus('45.79.97.151', {
-                    port: 25565 // optional, only if you need a custom port
-                  }, function (err, status) {
+                  
+                  MinecraftAPI.getServerStatus('45.79.97.151', {port: 25565 }, function (err, status) {
                     if (err) {
                       return document.querySelector('.server-status').innerHTML = 'Error loading status';
                     }
+                    
+                    var str = status.online ? '[Online]' : '[Offline]';
+                    document.querySelector('.server-online').innerHTML = str + "[" +  status.players.now + "/" + status.players.max + "]" + "[" + status.server.name + "]"
+                    // YES THERON DID WRITE THIS JAVASCRIPT TO!
 
-                    // you can change these to your own message!
-                    document.querySelector('.server-online').innerHTML = status.online ? '[Online]' : '[Offline]';
                   });
                 </script> 
 
@@ -157,13 +161,11 @@
               <div  class="ebox"> 
                 Rules of the server<br><br>
                 <br> 
-                1. Dont fucking hack im deadass you will be banned<br>
+                1. Don't take things too seriously, it's a computer game<br>
                 <br>
-                2. Dont steal items :( its just plain rude.<br>
+                2. Hacking is bannable.<br>
                 <br>
-                3. Dont get offeneded or ur just a pussy<br>
-                <br>
-                4. Listen to admins because they can ban u <br>
+                3. No griefing or stealing! (there ARE logs and rollbacks)<br>
                 <br> 
                 5. Salitness is a crime punishable by death<br> 
 
@@ -175,7 +177,7 @@
       </div>
       
       
- <br><br><br>Website created by Theroon   | Server created by eli. 
+      <br><br><br><div class = "bot_text">Website created by Theron   | Server created by eli. | Server info (<a href="https://mcapi.us/">mcapi</a>)</div> 
     </div>
     
 
